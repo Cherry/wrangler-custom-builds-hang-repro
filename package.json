@@ -1,0 +1,21 @@
+{
+	"name": "build-hang-repro",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build:worker": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js",
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.2.4",
+		"@cloudflare/workers-types": "^4.20240423.0",
+		"esbuild": "^0.20.2",
+		"typescript": "^5.4.5",
+		"vitest": "1.3.0",
+		"wrangler": "^3.53.0"
+	}
+}
